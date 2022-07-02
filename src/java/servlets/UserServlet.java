@@ -116,6 +116,26 @@ public class UserServlet extends HttpServlet {
             }
             
             try {
+                if(us.get(email) != null){
+                    request.setAttribute("message", "exists");
+                    // show all the users
+                    try {
+                        List<User> users = us.getAll();
+                        request.setAttribute("users", users);
+                    } catch (Exception ex) {
+                        Logger.getLogger(UserServlet.class.getName()).log(Level.SEVERE, null, ex);
+                        request.setAttribute("message", "error");
+                    }
+
+                    // Load the JSP and stop the code call
+                    getServletContext().getRequestDispatcher("/WEB-INF/users.jsp").forward(request, response);
+                    return;
+                }
+            } catch (Exception ex) {
+                Logger.getLogger(UserServlet.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+            try {
                 Role role_id = rs.get(role);
                 us.insert(email, isActive ? 1:0 , fName, lName, password, role_id.getRole_id());
                 request.setAttribute("message", "create");

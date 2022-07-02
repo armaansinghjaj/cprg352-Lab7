@@ -17,10 +17,10 @@
             <h3 class="heading">Add User</h3>
             
             <form method="POST" action="users">
-                <input class="fields" type="email" name="email" value="${add_email}" placeholder="Email"> <br>
-                <input class="fields" type="text" name="f_name" value="${add_f_name}" placeholder="First Name"> <br>
-                <input class="fields" type="text" name="l_name" value="${add_l_name}" placeholder="Last Name"> <br>
-                <input class="fields" type="password" name="password" value="${add_password}" placeholder="Password"> <br>
+                <input class="fields" type="email" name="email" value="${add_email}" maxlength="40" placeholder="Email"> <br>
+                <input class="fields" type="text" name="f_name" value="${add_f_name}" maxlength="20" placeholder="First Name"> <br>
+                <input class="fields" type="text" name="l_name" value="${add_l_name}" maxlength="20" placeholder="Last Name"> <br>
+                <input class="fields" type="password" name="password" value="${add_password}" maxlength="20" placeholder="Password"> <br>
                 
                 <select name="role" value="${add_role}" class="fields selectRole">
                     <option value="">---</option>
@@ -86,9 +86,9 @@
 
                 <form method="POST" action="users">
 
-                    <input class="fields" type="text" name="f_name" value="${update_f_name}" placeholder="First Name"> <br>
-                    <input class="fields" type="text" name="l_name" value="${update_l_name}" placeholder="Last Name"> <br>
-                    <input class="fields" type="password" name="password" value="${update_password}" placeholder="Password"> <br>
+                    <input class="fields" type="text" name="f_name" value="${update_f_name}" maxlength="20" placeholder="First Name"> <br>
+                    <input class="fields" type="text" name="l_name" value="${update_l_name}" maxlength="20" placeholder="Last Name"> <br>
+                    <input class="fields" type="password" name="password" value="${update_password}" maxlength="20" placeholder="Password"> <br>
                     <select name="role" value="${update_role}" class="fields selectRole">
                         <option value="">---</option>
                         
@@ -143,6 +143,7 @@
                                     <c:if test="${message eq 'delete'}">User deleted</c:if>
                                     <c:if test="${message eq 'error'}">Something went wrong!</c:if>
                                     <c:if test="${message eq 'inputError'}">Invalid Input</c:if>
+                                    <c:if test="${message eq 'exists'}">User already exists</c:if>
                                     <c:if test="${message eq null}">No new notifications</c:if>
                                 </span>
                                 <c:if test="${message != null}">
