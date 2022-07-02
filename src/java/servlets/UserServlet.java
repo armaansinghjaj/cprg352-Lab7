@@ -80,7 +80,7 @@ public class UserServlet extends HttpServlet {
         // if user pressed add button
         if(request.getParameter("action").equals("add")){
             
-            String email = request.getParameter("email").trim();
+            String email = request.getParameter("email");
             String fName = request.getParameter("f_name");
             String lName = request.getParameter("l_name");
             String password = request.getParameter("password");

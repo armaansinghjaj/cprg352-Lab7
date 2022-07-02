@@ -82,7 +82,7 @@ public class UserDB {
             ps.setInt(2, user.getActive());
             ps.setString(3, user.getFirst_name());
             ps.setString(4, user.getLast_name());
-            ps.setString(5, user.getPassword());
+            ps.setString(5, user.getLast_name());
             ps.setInt(6, user.getRole());
             ps.executeUpdate();
         } finally {
