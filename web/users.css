@@ -96,24 +96,11 @@ td{
     cursor: pointer;
     border-radius: 45px;
     background-color: #33811b;
-    margin-left: 80px;
-    padding-left: 10px;
-    width: 12rem;
     box-shadow: 5px 5px 30px black;
 }
 .divs{
     margin-top: 2rem;
     box-shadow: 5px 23px 54px black;
-}
-.addUser:hover{
-    transform: translate3d(100px, 100px, -200px);
-    margin-top: 80px;
-    border-radius: 10px;
-}
-.editUser:hover{
-    margin-top: 80px;
-    transform: translate3d(-100px, 100px, 200px);
-    border-radius: 10px;
 }
 
 
